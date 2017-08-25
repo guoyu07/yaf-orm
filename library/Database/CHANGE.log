@@ -1,0 +1,16 @@
+version 1.1.0
+
+fixed :
+    1. whereIn function,when param is string, need to add ""
+    2. pdo execute add CODE_ENV check, throw error when develop
+
+add:
+    1. add filter whereRaw()
+    2. add getter of sql string method getQuerySql()
+    3. add getter of param array method getQueryParam()
+    4. add subSelect(), which will not trigger the pdo execute,
+       but has prepare sql and params
+    5. add alias of table name. !!Attention : lifetime of alias name is short,
+       it comes to an end where trigger pdo query(like select,update,delete,insert)
+       and subSelect()
+    6. add set of throw PDO Exception
